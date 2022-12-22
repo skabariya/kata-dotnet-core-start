@@ -29,4 +29,18 @@ public class FizzBuzzTests
         // Assert
         Assert.Equal("Fizz", result);
     }
+    
+    [Theory]
+    [InlineData(5)]
+    [InlineData(10)]
+    [InlineData(20)]
+    public void Give_NumberWhichIsMultiplyBy5_When_Get_Then_ShouldReturnBuzz(int number)
+    {
+        // Arrange
+        // Act
+        var result = FizzBuzz.Get(number);
+        
+        // Assert
+        Assert.Equal("Buzz", result);
+    }
 }
