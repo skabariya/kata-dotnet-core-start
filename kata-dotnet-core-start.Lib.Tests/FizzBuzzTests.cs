@@ -43,4 +43,19 @@ public class FizzBuzzTests
         // Assert
         Assert.Equal("Buzz", result);
     }
+    
+    [Theory]
+    [InlineData(15)]
+    [InlineData(30)]
+    [InlineData(45)]
+    [InlineData(90)]
+    public void Give_NumberWhichIsMultiplyBy3And5_When_Get_Then_ShouldReturnFizzBuzz(int number)
+    {
+        // Arrange
+        // Act
+        var result = FizzBuzz.Get(number);
+        
+        // Assert
+        Assert.Equal("FizzBuzz", result);
+    }
 }
