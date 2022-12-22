@@ -10,7 +10,6 @@ public class FizzBuzzTests
     [InlineData(101)]
     public void Give_NumberWhichIsNotMultiplyBy3And5_When_Get_Then_ShouldReturnSameNumber(uint number)
     {
-        // Arrange
         // Act
         var result = FizzBuzz.Get(number);
         
@@ -24,7 +23,6 @@ public class FizzBuzzTests
     [InlineData(9)]
     public void Give_NumberWhichIsMultiplyBy3_When_Get_Then_ShouldReturnFizz(uint number)
     {
-        // Arrange
         // Act
         var result = FizzBuzz.Get(number);
         
@@ -38,7 +36,6 @@ public class FizzBuzzTests
     [InlineData(20)]
     public void Give_NumberWhichIsMultiplyBy5_When_Get_Then_ShouldReturnBuzz(uint number)
     {
-        // Arrange
         // Act
         var result = FizzBuzz.Get(number);
         
@@ -53,7 +50,6 @@ public class FizzBuzzTests
     [InlineData(90)]
     public void Give_NumberWhichIsMultiplyBy3And5_When_Get_Then_ShouldReturnFizzBuzz(uint number)
     {
-        // Arrange
         // Act
         var result = FizzBuzz.Get(number);
         
