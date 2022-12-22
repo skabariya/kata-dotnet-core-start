@@ -1,8 +1,11 @@
 ﻿namespace kata_dotnet_core_start.Lib;
 public static class FizzBuzz
 {
-    public static string Get(int number)
+    public static string Get(uint number)
     {
+        if(number is 0)
+            return number.ToString();
+
         if (number % 3 == 0 && number % 5 == 0)
             return "FizzBuzz";
         

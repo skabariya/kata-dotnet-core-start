@@ -6,6 +6,6 @@ Console.WriteLine("Hello, World!");
 
 foreach (var number in Enumerable.Range(1, 100))
 {
-     var result = FizzBuzz.Get(number);
+     var result = FizzBuzz.Get((uint)number);
      Console.WriteLine(result);
 }
