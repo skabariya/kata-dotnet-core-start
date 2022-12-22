@@ -1,24 +1,10 @@
 ﻿namespace kata_dotnet_core_start.Lib;
-public static class FizzBuzz
+public abstract class FizzBuzz
 {
-    public static string Get(uint number)
-    {
-        if(number is 0)
-            return number.ToString();
+    public abstract string Get(uint number);
+    
+    protected static bool IsMultipleOf3(uint number) => number % 3 == 0;
 
-        if (IsMultipleOf3(number) && IsMultipleOf5(number))
-            return "FizzBuzz";
-        
-        if (IsMultipleOf3(number))
-            return "Fizz";
-
-        if (IsMultipleOf5(number))
-            return "Buzz";
-        
-        return number.ToString();
-    }
-
-    private static bool IsMultipleOf3(uint number) => number % 3 == 0;
-
-    private static bool IsMultipleOf5(uint number) => number % 5 == 0;
+    protected static bool IsMultipleOf5(uint number) => number % 5 == 0;
+    protected static bool Contains3(uint number) => number.ToString().Contains('3');
 }

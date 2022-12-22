@@ -2,11 +2,11 @@ using Xunit.Abstractions;
 
 namespace kata_dotnet_core_start.Lib.Tests;
 
-public class FizzBuzzTests
+public class FizzBuzzStage1Tests
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    public FizzBuzzTests(ITestOutputHelper testOutputHelper)
+    public FizzBuzzStage1Tests(ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }
@@ -20,7 +20,7 @@ public class FizzBuzzTests
     public void Give_NumberWhichIsNotMultiplyBy3And5_When_Get_Then_ShouldReturnSameNumber(uint number)
     {
         // Act
-        var result = FizzBuzz.Get(number);
+        var result = new FizzBuzzStage1().Get(number);
         
         // Assert
         Assert.Equal(number.ToString(), result);
@@ -33,7 +33,7 @@ public class FizzBuzzTests
     public void Give_NumberWhichIsMultiplyBy3_When_Get_Then_ShouldReturnFizz(uint number)
     {
         // Act
-        var result = FizzBuzz.Get(number);
+        var result = new FizzBuzzStage1().Get(number);
         
         // Assert
         Assert.Equal("Fizz", result);
@@ -46,7 +46,7 @@ public class FizzBuzzTests
     public void Give_NumberWhichIsMultiplyBy5_When_Get_Then_ShouldReturnBuzz(uint number)
     {
         // Act
-        var result = FizzBuzz.Get(number);
+        var result = new FizzBuzzStage1().Get(number);
         
         // Assert
         Assert.Equal("Buzz", result);
@@ -60,7 +60,7 @@ public class FizzBuzzTests
     public void Give_NumberWhichIsMultiplyBy3And5_When_Get_Then_ShouldReturnFizzBuzz(uint number)
     {
         // Act
-        var result = FizzBuzz.Get(number);
+        var result = new FizzBuzzStage1().Get(number);
         
         // Assert
         Assert.Equal("FizzBuzz", result);
@@ -76,7 +76,7 @@ public class FizzBuzzTests
         // Assert
         foreach (var number in numbers)
         {
-            var result = FizzBuzz.Get((uint)number);
+            var result = new FizzBuzzStage1().Get((uint)number);
             _testOutputHelper.WriteLine(result);
             if (IsMultipleOf3(number) && IsMultipleOf5(number))
                 Assert.Equal("FizzBuzz", result);
@@ -92,4 +92,5 @@ public class FizzBuzzTests
 
         bool IsMultipleOf5(int number) => number % 5 == 0;
     }
+    
 }
