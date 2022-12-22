@@ -18,13 +18,7 @@ public static class FizzBuzz
         return number.ToString();
     }
 
-    private static bool IsMultipleOf3(uint number)
-    {
-        return number % 3 == 0;
-    }
+    private static bool IsMultipleOf3(uint number) => number % 3 == 0;
 
-    private static bool IsMultipleOf5(uint number)
-    {
-        return number % 5 == 0;
-    }
+    private static bool IsMultipleOf5(uint number) => number % 5 == 0;
 }
