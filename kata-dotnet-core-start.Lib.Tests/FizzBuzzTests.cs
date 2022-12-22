@@ -1,7 +1,16 @@
+using Xunit.Abstractions;
+
 namespace kata_dotnet_core_start.Lib.Tests;
 
 public class FizzBuzzTests
 {
+    private readonly ITestOutputHelper _testOutputHelper;
+
+    public FizzBuzzTests(ITestOutputHelper testOutputHelper)
+    {
+        _testOutputHelper = testOutputHelper;
+    }
+
     [Theory]
     [InlineData(0)]
     [InlineData(1)]
@@ -55,5 +64,32 @@ public class FizzBuzzTests
         
         // Assert
         Assert.Equal("FizzBuzz", result);
+    }
+
+    [Theory]
+    [InlineData(1, 100)]
+    public void Give_RangeOfNumber_When_Get_Then_ShouldReturnProperResult(int start, int end)
+    {
+        // Arrange
+        var numbers = Enumerable.Range(start, end);
+        
+        // Assert
+        foreach (var number in numbers)
+        {
+            var result = FizzBuzz.Get((uint)number);
+            _testOutputHelper.WriteLine(result);
+            if (IsMultipleOf3(number) && IsMultipleOf5(number))
+                Assert.Equal("FizzBuzz", result);
+            else if (IsMultipleOf3(number))
+                Assert.Equal("Fizz", result);
+            else if (IsMultipleOf5(number))
+                Assert.Equal("Buzz", result);
+            else
+                Assert.Equal(number.ToString(), result);
+        }
+        
+        bool IsMultipleOf3(int number) => number % 3 == 0;
+
+        bool IsMultipleOf5(int number) => number % 5 == 0;
     }
 }
