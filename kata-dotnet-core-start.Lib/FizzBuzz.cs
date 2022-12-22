@@ -6,15 +6,25 @@ public static class FizzBuzz
         if(number is 0)
             return number.ToString();
 
-        if (number % 3 == 0 && number % 5 == 0)
+        if (IsMultipleOf3(number) && IsMultipleOf5(number))
             return "FizzBuzz";
         
-        if (number % 3 == 0)
+        if (IsMultipleOf3(number))
             return "Fizz";
 
-        if (number % 5 == 0)
+        if (IsMultipleOf5(number))
             return "Buzz";
         
         return number.ToString();
+    }
+
+    private static bool IsMultipleOf3(uint number)
+    {
+        return number % 3 == 0;
+    }
+
+    private static bool IsMultipleOf5(uint number)
+    {
+        return number % 5 == 0;
     }
 }
