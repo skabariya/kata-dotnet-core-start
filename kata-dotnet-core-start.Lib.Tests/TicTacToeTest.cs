@@ -29,4 +29,19 @@ public class TicTacToeTest
         Assert.Equal(board[1], "X");
         Assert.Equal(board[2], "O");
     }
+
+    [Fact]
+    public void Given_new_game_Then_X_is_first_move()
+    {
+        // Arrange
+        var ticTacToe = new TickTacToe();
+
+        // Act
+        ticTacToe.Enter(1);
+
+        // Assert
+        var board = ticTacToe.GetBoard();
+        Assert.Equal(board.Count, 1);
+        Assert.Equal(board[1], "X");
+    }
 }
