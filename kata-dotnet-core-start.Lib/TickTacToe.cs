@@ -13,10 +13,15 @@ public class TickTacToe
     {
         if (number < 1 || number > 9)
             return false;
+
+        if (Board.ContainsKey(number))
+            return false;
+
         if (Board.Count % 2 == 0)
             Board.Add(number, "X");
         else
             Board.Add(number, "O");
+            
         return true;
     }
 }

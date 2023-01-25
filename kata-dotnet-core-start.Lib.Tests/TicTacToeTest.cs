@@ -61,4 +61,20 @@ public class TicTacToeTest
         var board = ticTacToe.GetBoard();
         Assert.Equal(board.Count, 0);
     }
+
+    [Fact]
+    public void Given_Number_One_Than_Same_Number_Should_Not_Be_Enter()
+    {
+        // Arrange
+        var ticTacToe = new TickTacToe();
+        ticTacToe.Enter(1);
+
+        // Act
+        var result = ticTacToe.Enter(1);
+
+        // Assert
+        Assert.Equal(result, false);
+        var board = ticTacToe.GetBoard();
+        Assert.Equal(board.Count, 1);
+    }
 }
