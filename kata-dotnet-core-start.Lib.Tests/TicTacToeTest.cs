@@ -44,4 +44,21 @@ public class TicTacToeTest
         Assert.Equal(board[1], "X");
         Assert.Equal(board[2], "O");
     }
+
+    [Theory]
+    [InlineData(0)]
+    [InlineData(10)]
+    public void Given_Number_Outside_One_To_Nine_Then_Return_Error(int number)
+    {
+        // Arrange
+        var ticTacToe = new TickTacToe();
+
+        // Act
+        var result = ticTacToe.Enter(number);
+
+        // Assert
+        Assert.Equal(result, false);
+        var board = ticTacToe.GetBoard();
+        Assert.Equal(board.Count, 0);
+    }
 }

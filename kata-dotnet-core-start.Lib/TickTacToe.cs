@@ -9,11 +9,14 @@ public class TickTacToe
         return Board;
     }
 
-    public void Enter(int number)
+    public bool Enter(int number)
     {
+        if (number < 1 || number > 9)
+            return false;
         if (Board.Count % 2 == 0)
             Board.Add(number, "X");
         else
             Board.Add(number, "O");
+        return true;
     }
 }
