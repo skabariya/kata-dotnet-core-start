@@ -3,6 +3,17 @@ namespace kata_dotnet_core_start.Lib.Tests;
 public class TicTacToeTest
 {
     [Fact]
+    public void Given_EmptyBoard()
+    {
+        // Act
+        var ticTacToe = new TickTacToe();
+
+        // Assert
+        var board = ticTacToe.GetBoard();
+        Assert.Equal(board.Count, 0);
+    }
+
+    [Fact]
     public void Test1()
     {
         // Act
