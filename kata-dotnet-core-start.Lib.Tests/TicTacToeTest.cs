@@ -14,11 +14,13 @@ public class TicTacToeTest
     }
 
     [Fact]
-    public void Test1()
+    public void Given_Player_X_Just_Played_Then_Turn_Goes_To_O()
     {
-        // Act
+        // Arrange
         var ticTacToe = new TickTacToe();
         ticTacToe.Enter(1);
+
+        // Act
         ticTacToe.Enter(2);
 
         // Assert
