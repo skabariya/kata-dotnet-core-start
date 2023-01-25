@@ -2,8 +2,23 @@
 
 public class TickTacToe
 {
-    public IEnumerable<int> GetBoard()
+    private Dictionary<int, string> Board = new Dictionary<int, string>();
+
+    public Dictionary<int, string> GetBoard()
     {
-        return Array.Empty<int>();
+        return Board;
+    }
+
+    public bool Enter(int number)
+    {
+        if(Board.ContainsKey(number))
+            return false;
+
+        if (Board.Count % 2 == 0)
+            Board.Add(number, "X");
+        else
+            Board.Add(number, "O");
+
+        return true;
     }
 }

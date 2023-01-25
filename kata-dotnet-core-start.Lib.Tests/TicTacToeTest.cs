@@ -7,9 +7,13 @@ public class TicTacToeTest
     {
         // Act
         var ticTacToe = new TickTacToe();
-        var board = ticTacToe.GetBoard();
+        ticTacToe.Enter(1);
+        ticTacToe.Enter(2);
 
         // Assert
-        Assert.Equal(Array.Empty<int>(), board);
+        var board = ticTacToe.GetBoard();
+        Assert.Equal(board.Count, 2);
+        Assert.Equal(board[1], "X");
+        Assert.Equal(board[2], "O");
     }
 }
