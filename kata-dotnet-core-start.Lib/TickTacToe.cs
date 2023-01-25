@@ -9,16 +9,11 @@ public class TickTacToe
         return Board;
     }
 
-    public bool Enter(int number)
+    public void Enter(int number)
     {
-        if(Board.ContainsKey(number))
-            return false;
-
         if (Board.Count % 2 == 0)
             Board.Add(number, "X");
         else
             Board.Add(number, "O");
-
-        return true;
     }
 }
