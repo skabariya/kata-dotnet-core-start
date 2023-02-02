@@ -392,7 +392,7 @@ public class TicTacToeTest
     }
 
     [Fact]
-    public void If_Winner_then_game_is_over()
+    public void If_X_Wins_then_game_is_over()
     {
         // Arrange
         var ticTacToe = new TickTacToe();
@@ -404,6 +404,25 @@ public class TicTacToeTest
 
         // Act
         var result = ticTacToe.Enter(8); // o
+
+        // Assert
+        Assert.Equal(result, false);
+    }
+
+    [Fact]
+    public void If_O_Wins_then_game_is_over()
+    {
+        // Arrange
+        var ticTacToe = new TickTacToe();
+        ticTacToe.Enter(9); // X
+        ticTacToe.Enter(1); // o
+        ticTacToe.Enter(7); // X
+        ticTacToe.Enter(2); // o
+        ticTacToe.Enter(5); // X
+        ticTacToe.Enter(3); // o
+
+        // Act
+        var result = ticTacToe.Enter(6); // X
 
         // Assert
         Assert.Equal(result, false);
