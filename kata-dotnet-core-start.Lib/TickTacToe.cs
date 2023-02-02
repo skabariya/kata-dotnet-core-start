@@ -46,19 +46,23 @@ public class TickTacToe
 
     public string Winner()
     {
+        // For rows
         if (Board[1] != string.Empty && Board[1] == Board[2] && Board[2] == Board[3])
         {
             return Board[1];
         }
+
         if (Board[4] != string.Empty && Board[4] == Board[5] && Board[5] == Board[6])
         {
             return Board[4];
         }
+
         if (Board[7] != string.Empty && Board[7] == Board[8] && Board[8] == Board[9])
         {
             return Board[7];
         }
 
+        // For columns
         if (Board[1] != string.Empty && Board[1] == Board[4] && Board[4] == Board[7])
         {
             return Board[1];
@@ -74,6 +78,7 @@ public class TickTacToe
             return Board[3];
         }
 
+        // For diagonal
         if (Board[1] != string.Empty && Board[1] == Board[5] && Board[5] == Board[9])
         {
             return Board[1];
