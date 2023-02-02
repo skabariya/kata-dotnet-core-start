@@ -26,6 +26,10 @@ public class TickTacToe
 
     public bool Enter(int number)
     {
+        var winner = Winner();
+        if (winner != string.Empty)
+            return false;
+
         if (number is < 1 or > 9)
             return false;
 
@@ -36,8 +40,6 @@ public class TickTacToe
             Board[number] =  "X";
         else
             Board[number] = "O";
-
-        // _winner = CheckWinner();
 
         return true;
     }

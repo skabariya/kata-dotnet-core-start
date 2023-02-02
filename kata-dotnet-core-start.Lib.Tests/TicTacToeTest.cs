@@ -390,4 +390,22 @@ public class TicTacToeTest
         // Assert
         Assert.Equal(result, string.Empty);
     }
+
+    [Fact]
+    public void If_Winner_then_game_is_over()
+    {
+        // Arrange
+        var ticTacToe = new TickTacToe();
+        ticTacToe.Enter(1); // X
+        ticTacToe.Enter(9); // o
+        ticTacToe.Enter(2); // X
+        ticTacToe.Enter(5); // o
+        ticTacToe.Enter(3); // X
+
+        // Act
+        var result = ticTacToe.Enter(8); // o
+
+        // Assert
+        Assert.Equal(result, false);
+    }
 }
