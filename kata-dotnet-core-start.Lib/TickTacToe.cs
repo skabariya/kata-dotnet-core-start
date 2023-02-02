@@ -44,6 +44,10 @@ public class TickTacToe
 
     public string Winner()
     {
+        if (Board[1] != string.Empty && Board[1] == Board[2] && Board[2] == Board[3])
+        {
+            return Board[1];
+        }
         if (Board[4] != string.Empty && Board[4] == Board[5] && Board[5] == Board[6])
         {
             return Board[4];
