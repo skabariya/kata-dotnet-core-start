@@ -293,4 +293,22 @@ public class TicTacToeTest
         // Assert
         Assert.Equal(result, "O");
     }
+
+    [Fact]
+    public void Check_159_Winner_X()
+    {
+        // Arrange
+        var ticTacToe = new TickTacToe();
+        ticTacToe.Enter(1); // X
+        ticTacToe.Enter(3); // o
+        ticTacToe.Enter(5); // X
+        ticTacToe.Enter(6); // o
+        ticTacToe.Enter(9); // X
+
+        // Act
+        var result = ticTacToe.Winner();
+
+        // Assert
+        Assert.Equal(result, "X");
+    }
 }
