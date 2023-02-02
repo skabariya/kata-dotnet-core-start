@@ -89,7 +89,7 @@ public class TicTacToeTest
         // Assert
         Assert.Equal(result, "X");
     }
-    
+
     [Fact]
     public void Check_If_There_Any_Winner_Too()
     {
@@ -104,8 +104,26 @@ public class TicTacToeTest
 
         // Act
         var result = ticTacToe.Winner();
-        
+
         // Assert
         Assert.Equal(result, "O");
+    }
+    
+    [Fact]
+    public void Check_If_There_Any_Winner_Three()
+    {
+        // Arrange
+        var ticTacToe = new TickTacToe();
+        ticTacToe.Enter(7); // X
+        ticTacToe.Enter(4); // o
+        ticTacToe.Enter(8); // X
+        ticTacToe.Enter(5); // o
+        ticTacToe.Enter(9); // X
+
+        // Act
+        var result = ticTacToe.Winner();
+
+        // Assert
+        Assert.Equal(result, "X");
     }
 }
