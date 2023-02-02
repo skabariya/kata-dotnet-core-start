@@ -44,6 +44,8 @@ public class TickTacToe
 
     public string Winner()
     {
+        if (Board[4] == Board[5] && Board[5] == Board[6])
+            return "O";
         return "X";
     }
 }
