@@ -201,4 +201,41 @@ public class TicTacToeTest
         // Assert
         Assert.Equal(result, "O");
     }
+
+    [Fact]
+    public void Check_258_Winner_X()
+    {
+        // Arrange
+        var ticTacToe = new TickTacToe();
+        ticTacToe.Enter(2); // X
+        ticTacToe.Enter(1); // o
+        ticTacToe.Enter(5); // X
+        ticTacToe.Enter(4); // o
+        ticTacToe.Enter(8); // X
+
+        // Act
+        var result = ticTacToe.Winner();
+
+        // Assert
+        Assert.Equal(result, "X");
+    }
+
+    [Fact]
+    public void Check_258_Winner_O()
+    {
+        // Arrange
+        var ticTacToe = new TickTacToe();
+        ticTacToe.Enter(1); // X
+        ticTacToe.Enter(2); // o
+        ticTacToe.Enter(4); // X
+        ticTacToe.Enter(5); // o
+        ticTacToe.Enter(9); // X
+        ticTacToe.Enter(8); // o
+
+        // Act
+        var result = ticTacToe.Winner();
+
+        // Assert
+        Assert.Equal(result, "O");
+    }
 }
