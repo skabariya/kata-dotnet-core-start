@@ -77,6 +77,11 @@ public class TickTacToe
             return Board[1];
         }
 
+        if (Board[3] != string.Empty && Board[3] == Board[5] && Board[5] == Board[7])
+        {
+            return Board[3];
+        }
+
         return string.Empty;
     }
 }
