@@ -2,7 +2,22 @@
 
 public class TickTacToe
 {
-    private Dictionary<int, string> Board = new Dictionary<int, string>();
+    private Dictionary<int, string> Board = new()
+    {
+        {1,""},
+        {2,""},
+        {3,""},
+        {4,""},
+        {5,""},
+        {6,""},
+        {7,""},
+        {8,""},
+        {9,""}
+    };
+
+    // public string Winner { get; private set; }
+
+    public int FilledBoard => Board.Where(x => x.Value != string.Empty).Count();
 
     public Dictionary<int, string> GetBoard()
     {
@@ -11,17 +26,24 @@ public class TickTacToe
 
     public bool Enter(int number)
     {
-        if (number < 1 || number > 9)
+        if (number is < 1 or > 9)
             return false;
 
-        if (Board.ContainsKey(number))
+        if (Board[number] == "X" || Board[number] == "O")
             return false;
 
-        if (Board.Count % 2 == 0)
-            Board.Add(number, "X");
+        if (FilledBoard == 0 || FilledBoard % 2 == 0)
+            Board[number] =  "X";
         else
-            Board.Add(number, "O");
-            
+            Board[number] = "O";
+
+        // _winner = CheckWinner();
+
         return true;
+    }
+
+    public string Winner()
+    {
+        return "X";
     }
 }

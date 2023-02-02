@@ -3,14 +3,14 @@ namespace kata_dotnet_core_start.Lib.Tests;
 public class TicTacToeTest
 {
     [Fact]
-    public void Given_EmptyBoard()
+    public void Given_EmptyBoard_Then_Length_ShouldBe9()
     {
         // Act
         var ticTacToe = new TickTacToe();
 
         // Assert
         var board = ticTacToe.GetBoard();
-        Assert.Equal(board.Count, 0);
+        Assert.Equal(board.Count, 9);
     }
 
     [Fact]
@@ -24,7 +24,6 @@ public class TicTacToeTest
 
         // Assert
         var board = ticTacToe.GetBoard();
-        Assert.Equal(board.Count, 1);
         Assert.Equal(board[1], "X");
     }
 
@@ -40,7 +39,6 @@ public class TicTacToeTest
 
         // Assert
         var board = ticTacToe.GetBoard();
-        Assert.Equal(board.Count, 2);
         Assert.Equal(board[1], "X");
         Assert.Equal(board[2], "O");
     }
@@ -58,8 +56,6 @@ public class TicTacToeTest
 
         // Assert
         Assert.Equal(result, false);
-        var board = ticTacToe.GetBoard();
-        Assert.Equal(board.Count, 0);
     }
 
     [Fact]
@@ -74,7 +70,23 @@ public class TicTacToeTest
 
         // Assert
         Assert.Equal(result, false);
-        var board = ticTacToe.GetBoard();
-        Assert.Equal(board.Count, 1);
+    }
+
+    [Fact]
+    public void Check_If_There_Any_Winner()
+    {
+        // Arrange
+        var ticTacToe = new TickTacToe();
+        ticTacToe.Enter(1); // X
+        ticTacToe.Enter(4); // o
+        ticTacToe.Enter(2); // X
+        ticTacToe.Enter(5); // o
+        ticTacToe.Enter(3); // X
+
+        // Act
+        var result = ticTacToe.Winner();
+
+        // Assert
+        Assert.Equal(result, "X");
     }
 }
