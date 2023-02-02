@@ -73,7 +73,7 @@ public class TicTacToeTest
     }
 
     [Fact]
-    public void Check_If_There_Any_Winner()
+    public void Check_123_Winner_X()
     {
         // Arrange
         var ticTacToe = new TickTacToe();
@@ -91,7 +91,7 @@ public class TicTacToeTest
     }
 
     [Fact]
-    public void Check_If_There_Any_Winner_Too()
+    public void Check_456_Winner_O()
     {
         // Arrange
         var ticTacToe = new TickTacToe();
@@ -108,7 +108,7 @@ public class TicTacToeTest
         // Assert
         Assert.Equal(result, "O");
     }
-    
+
     [Fact]
     public void Check_If_There_Any_Winner_Three()
     {
@@ -126,7 +126,7 @@ public class TicTacToeTest
         // Assert
         Assert.Equal(result, "X");
     }
-    
+
     [Fact]
     public void Check_789_Winner_O()
     {
@@ -145,7 +145,7 @@ public class TicTacToeTest
         // Assert
         Assert.Equal(result, "O");
     }
-    
+
     [Fact]
     public void Check_123_Winner_O()
     {
@@ -157,6 +157,43 @@ public class TicTacToeTest
         ticTacToe.Enter(2); // o
         ticTacToe.Enter(9); // X
         ticTacToe.Enter(3); // o
+
+        // Act
+        var result = ticTacToe.Winner();
+
+        // Assert
+        Assert.Equal(result, "O");
+    }
+
+    [Fact]
+    public void Check_147_Winner_X()
+    {
+        // Arrange
+        var ticTacToe = new TickTacToe();
+        ticTacToe.Enter(1); // X
+        ticTacToe.Enter(2); // o
+        ticTacToe.Enter(4); // X
+        ticTacToe.Enter(5); // o
+        ticTacToe.Enter(7); // X
+
+        // Act
+        var result = ticTacToe.Winner();
+
+        // Assert
+        Assert.Equal(result, "X");
+    }
+
+    [Fact]
+    public void Check_147_Winner_O()
+    {
+        // Arrange
+        var ticTacToe = new TickTacToe();
+        ticTacToe.Enter(2); // X
+        ticTacToe.Enter(1); // o
+        ticTacToe.Enter(5); // X
+        ticTacToe.Enter(4); // o
+        ticTacToe.Enter(9); // X
+        ticTacToe.Enter(7); // o
 
         // Act
         var result = ticTacToe.Winner();
