@@ -1,9 +1,14 @@
 namespace kata_dotnet_core_start.Lib;
 
-public static class MarsRoverPosition
+public class MarsRoverPosition
 {
-    public static int TotalPositions()
+    public int TotalPositions()
     {
         return 25;
+    }
+
+    public string Starting()
+    {
+        return "00";
     }
 }
