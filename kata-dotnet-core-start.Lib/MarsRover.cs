@@ -34,10 +34,14 @@ public class MarsRover
     {
         return _currentPosition.SetX(_currentPosition.X + 1);
     }
-    
+
     public bool Execute(MoveLeftCommand moveRightCommand)
     {
         return _currentPosition.SetX(_currentPosition.X - 1);
     }
 
+    public bool Execute(MoveForwardCommand moveRightCommand)
+    {
+        return _currentPosition.SetY(_currentPosition.Y - 1);
+    }
 }
