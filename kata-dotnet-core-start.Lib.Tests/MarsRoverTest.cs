@@ -6,7 +6,7 @@ public class MarsRoverTest
     public void ThereShouldBe25Positions()
     {
         //Arrange 
-        var marsRoverPosition = new MarsRoverPosition();
+        var marsRoverPosition = new MarsRover();
         
         //Act
         var result = marsRoverPosition.TotalPositions();
@@ -19,10 +19,10 @@ public class MarsRoverTest
     public void StartingPositionShouldBe_O_O()
     {
         //Arrange 
-        var marsRoverPosition = new MarsRoverPosition();
+        var marsRoverPosition = new MarsRover();
         
         //Act
-        var result = marsRoverPosition.Starting();
+        var result = marsRoverPosition.StartingPosition();
         
         //Assert
         Assert.Equal("0:0", result);
@@ -32,10 +32,10 @@ public class MarsRoverTest
     public void GetPositionsOfObstacles()
     {
         //Arrange 
-        var marsRoverPosition = new MarsRoverPosition();
+        var marsRoverPosition = new MarsRover();
         
         //Act
-        var result = marsRoverPosition.Obstacles();
+        var result = marsRoverPosition.ObstaclePositions();
         
         //Assert
         Assert.Equal("0:2", result[0]);
