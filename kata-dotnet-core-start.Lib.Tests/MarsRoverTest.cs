@@ -18,7 +18,7 @@ public class MarsRoverTest
     }
     
     [Fact]
-    public void StartingPositionShouldBe_O_4()
+    public void StartingPositionShouldBe_0_4()
     {
         //Arrange 
         var marsRover = new MarsRover();
@@ -32,7 +32,7 @@ public class MarsRoverTest
     }
 
     [Fact]
-    public void WhenGivingCommand_Right_Then_PositionShouldBeChanged()
+    public void WhenGivingCommand_Right_Then_PositionShouldBe_1_4()
     {
         //Arrange 
         var marsRover = new MarsRover();
@@ -48,7 +48,7 @@ public class MarsRoverTest
     }
     
     [Fact]
-    public void WhenGivingCommand_ToMoveOnSameRightDirection_Then_PositionShouldBeChanged()
+    public void WhenGivingCommand_ToMoveOnSameRightDirection_Then_PositionShouldBe_2_4()
     {
         //Arrange 
         var marsRover = new MarsRover();
@@ -61,6 +61,23 @@ public class MarsRoverTest
         Assert.True(result);
         var currentPosition = marsRover.CurrentPosition(); 
         Assert.Equal((uint)2, currentPosition.X);
+        Assert.Equal((uint)4, currentPosition.Y);
+    }
+    
+    [Fact]
+    public void WhenGivingCommand_Left_Then_PositionShouldBe_0_4()
+    {
+        //Arrange 
+        var marsRover = new MarsRover();
+        marsRover.Execute(new MoveRightCommand());
+        
+        //Act
+        var result = marsRover.Execute(new MoveLeftCommand());
+        
+        //Assert
+        Assert.True(result);
+        var currentPosition = marsRover.CurrentPosition(); 
+        Assert.Equal((uint)0, currentPosition.X);
         Assert.Equal((uint)4, currentPosition.Y);
     }
 }

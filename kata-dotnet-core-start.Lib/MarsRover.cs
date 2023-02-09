@@ -25,13 +25,19 @@ public class MarsRover
         return _startingPosition;
     }
 
-    public bool Execute(MoveRightCommand moveRightCommand)
-    {
-        return _currentPosition.SetX(_currentPosition.X + 1);
-    }
-
     public Position CurrentPosition()
     {
         return _currentPosition;
     }
+
+    public bool Execute(MoveRightCommand moveRightCommand)
+    {
+        return _currentPosition.SetX(_currentPosition.X + 1);
+    }
+    
+    public bool Execute(MoveLeftCommand moveRightCommand)
+    {
+        return _currentPosition.SetX(_currentPosition.X - 1);
+    }
+
 }
