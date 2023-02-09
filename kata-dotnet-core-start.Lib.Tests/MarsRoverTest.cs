@@ -25,6 +25,21 @@ public class MarsRoverTest
         var result = marsRoverPosition.Starting();
         
         //Assert
-        Assert.Equal("00", result);
+        Assert.Equal("0:0", result);
+    }
+    
+    [Fact]
+    public void GetPositionsOfObstacles()
+    {
+        //Arrange 
+        var marsRoverPosition = new MarsRoverPosition();
+        
+        //Act
+        var result = marsRoverPosition.Obstacles();
+        
+        //Assert
+        Assert.Equal("0:2", result[0]);
+        Assert.Equal("2:4", result[1]);
+        Assert.Equal("4:1", result[2]);
     }
 }

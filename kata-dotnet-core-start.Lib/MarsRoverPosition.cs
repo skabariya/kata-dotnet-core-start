@@ -9,6 +9,11 @@ public class MarsRoverPosition
 
     public string Starting()
     {
-        return "00";
+        return "0:0";
+    }
+
+    public string[] Obstacles()
+    {
+        return new[] { "0:2", "2:4", "4:1" };
     }
 }
