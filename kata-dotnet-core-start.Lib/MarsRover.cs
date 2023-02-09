@@ -23,4 +23,9 @@ public class MarsRover
     {
         return true;
     }
+
+    public string CurrentPosition()
+    {
+        return "1:4";
+    }
 }

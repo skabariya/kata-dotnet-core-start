@@ -56,6 +56,6 @@ public class MarsRoverTest
         
         //Assert
         Assert.True(result);
-
+        Assert.Equal("1:4", marsRover.CurrentPosition());
     }
 }
