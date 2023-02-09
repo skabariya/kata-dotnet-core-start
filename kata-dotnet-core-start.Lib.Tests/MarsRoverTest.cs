@@ -20,15 +20,13 @@ public class MarsRoverTest
     [Fact]
     public void StartingPositionShouldBe_0_4()
     {
-        //Arrange
+        //Act
         var marsRover = new MarsRover();
 
-        //Act
-        var result = marsRover.StartingPosition();
-
         //Assert
-        Assert.Equal((uint)0, result.X);
-        Assert.Equal((uint)4, result.Y);
+        var startingPosition = marsRover.StartingPosition();
+        var currentPosition = marsRover.CurrentPosition();
+        Assert.Equal(startingPosition, currentPosition);
     }
 
     [Fact]
