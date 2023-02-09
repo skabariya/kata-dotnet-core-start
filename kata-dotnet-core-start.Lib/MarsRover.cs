@@ -4,28 +4,34 @@ namespace kata_dotnet_core_start.Lib;
 
 public class MarsRover
 {
+    private Position _currentPosition;
+    private Position _startingPosition;
+
+    public MarsRover()
+    {
+        _startingPosition = new Position();
+        _startingPosition.SetX(0);
+        _startingPosition.SetY(4);
+        _currentPosition = _startingPosition;
+    }
+    
     public int TotalPositions()
     {
         return 25;
     }
 
-    public string StartingPosition()
+    public Position StartingPosition()
     {
-        return "0:4";
-    }
-
-    public string[] ObstaclePositions()
-    {
-        return new[] { "0:2", "2:4", "4:1" };
+        return _startingPosition;
     }
 
     public bool Execute(MoveRightCommand moveRightCommand)
     {
-        return true;
+        return _currentPosition.SetX(_currentPosition.X + 1);
     }
 
-    public string CurrentPosition()
+    public Position CurrentPosition()
     {
-        return "1:4";
+        return _currentPosition;
     }
 }
